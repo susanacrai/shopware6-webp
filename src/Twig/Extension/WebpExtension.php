@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
 
-namespace Yireo\Webp\Twig\Extension;
+declare(strict_types=1);
+
+namespace Yby\Webp\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
-use Yireo\Webp\Util\WebpConvertor;
+use Yby\Webp\Util\WebpConvertor;
 
 class WebpExtension extends AbstractExtension
 {

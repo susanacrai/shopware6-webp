@@ -1,6 +1,8 @@
-<?php declare(strict_types=1);
+<?php
 
-namespace Yireo\Webp\Util;
+declare(strict_types=1);
+
+namespace Yby\Webp\Util;
 
 use League\Flysystem\FileNotFoundException;
 use Shopware\Production\Kernel;
@@ -40,9 +42,18 @@ class WebpConvertor
     public function convertImageUrl(string $imageUrl): string
     {
         $imagePath = $this->getFileFromImageUrl($imageUrl);
+        if (!$imagePath) {
+            return '';
+        }
+
         $webpPath = preg_replace('/\.(png|jpg)$/', '.webp', $imagePath);
+
+        if (file_exists($webpPath)) {
+            return preg_replace('/\.(png|jpg)$/', '.webp', $imageUrl);
+        }
+
         if ($this->shouldConvert($imagePath, $webpPath) === false) {
-            return $imageUrl;
+            return '';
         }
 
         $options = $this->getOptions();
@@ -99,11 +110,11 @@ class WebpConvertor
     private function getFileFromImageUrl(string $imageUrl): string
     {
         $imagePath = $this->getPublicDirectory() . str_replace($this->urlPackage->getBaseUrl($imageUrl), '', $imageUrl);
-        if (!file_exists($imagePath)) {
-            throw new FileNotFoundException($imagePath);
+        if (file_exists($imagePath)) {
+            return $imagePath;
+        } else {
+            return '';
         }
-
-        return $imagePath;
     }
 
     /**
