@@ -1,11 +1,12 @@
-# Yireo Webp for Shopware 6
+# Webp for Shopware 6, based in Yireo Webp for Shopware 6
+https://github.com/yireo-shopware6/shopware6-webp
 This extension adds a Twig filter `webp` for usage in your Twig templates.
 
 ## Installation
 ```bash
-composer require yireo/shopware6-webp
+composer require yby/shopware6-webp
 bin/console plugin:refresh
-bin/console plugin:install --activate YireoWebp
+bin/console plugin:install --activate YbyWebp
 ```
 
 ## Usage

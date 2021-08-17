@@ -3,12 +3,12 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="Yireo\Webp\Twig\Extension\WebpExtension">
-            <argument type="service" id="Yireo\Webp\Util\WebpConvertor"/>
+        <service id="Yby\Webp\Twig\Extension\WebpExtension">
+            <argument type="service" id="Yby\Webp\Util\WebpConvertor"/>
             <tag name="twig.extension"/>
         </service>
 
-        <service id="Yireo\Webp\Util\WebpConvertor">
+        <service id="Yby\Webp\Util\WebpConvertor">
             <argument type="service" id="kernel"/>
             <argument type="service" id="shopware.asset.public"/>
         </service>

@@ -1,18 +1,18 @@
 {
-  "name": "yireo/shopware6-webp",
+  "name": "yby/shopware6-webp",
   "description": "Shopware 6 plugin for adding WebP support",
   "type": "shopware-platform-plugin",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Yireo\\Webp\\": "src/"
+      "Yby\\Webp\\": "src/"
     }
   },
   "require": {
     "rosell-dk/webp-convert": "^2.4"
   },
   "extra": {
-    "shopware-plugin-class": "Yireo\\Webp\\YireoWebp",
+    "shopware-plugin-class": "Yby\\Webp\\YbyWebp",
     "label": {
       "en-GB": "Webp plugin"
     }
