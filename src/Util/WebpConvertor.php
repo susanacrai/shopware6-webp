@@ -46,10 +46,10 @@ class WebpConvertor
             return '';
         }
 
-        $webpPath = preg_replace('/\.(png|jpg)$/', '.webp', $imagePath);
+        $webpPath = preg_replace('/\.(png|jpg|PNG|JPG)$/', '.webp', $imagePath);
 
         if (file_exists($webpPath)) {
-            return preg_replace('/\.(png|jpg)$/', '.webp', $imageUrl);
+            return preg_replace('/\.(png|jpg|PNG|JPG)$/', '.webp', $imageUrl);
         }
 
         if ($this->shouldConvert($imagePath, $webpPath) === false) {
@@ -64,7 +64,7 @@ class WebpConvertor
             return $imageUrl;
         }
 
-        $webpUrl = preg_replace('/\.(png|jpg)$/', '.webp', $imageUrl);
+        $webpUrl = preg_replace('/\.(png|jpg|PNG|JPG)$/', '.webp', $imageUrl);
         return $webpUrl;
     }
 
