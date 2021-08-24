@@ -61,7 +61,7 @@ class WebpConvertor
         try {
             WebPConvert::convert($imagePath, $webpPath, $options);
         } catch (ConversionFailedException $e) {
-            return $imageUrl;
+            return '';
         }
 
         $webpUrl = preg_replace('/\.(png|jpg|PNG|JPG)$/', '.webp', $imageUrl);
